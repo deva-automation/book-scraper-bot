@@ -1,46 +1,80 @@
-# 📚 Advanced Book Scraper Bot (with Telegram Integration)
+📚 Advanced Book Scraper Bot (Selenium + Telegram Integration)
+🧠 Overview
 
-## 🧠 Description
-This is a professional Python automation script that uses **Selenium** to scrape book data from a website. It not only saves the data into a CSV file but also sends a real-time notification and the generated file directly to your **Telegram** account.
+This is a Python-based automation project that scrapes book data from a website using Selenium, saves it into a CSV file using Pandas, and automatically sends both a notification and the generated file to your Telegram account.
 
-## ⚙️ Technologies Used
-- **Python**: Core programming language.
-- **Selenium**: Web automation and scraping.
-- **Pandas**: Data manipulation and CSV creation.
-- **Requests**: Sending data to Telegram API.
-- **Dotenv**: Managing secure credentials (.env).
+It is designed for learning web scraping, automation, and API integration in a real-world project structure.
 
-## 🚀 Key Features
-- **Automated Scraping**: Extracts book names and prices accurately.
-- **Telegram Notifications**: Sends a success message to your phone upon completion.
-- **Direct File Delivery**: Automatically sends the `scraped_books.csv` file to your Telegram chat.
-- **Secure Credentials**: Keeps your Bot Token and Chat ID safe using Environment Variables.
-- **Error Handling**: Built-in logic to handle website loading issues or API errors.
+⚙️ Tech Stack
+Python 3.x
+Selenium (Web Automation)
+Pandas (Data Handling)
+Requests (Telegram API communication)
+python-dotenv (Environment Variable management)
+webdriver-manager (Automatic ChromeDriver handling)
+🚀 Features
+🔍 Automated book data scraping (title, price, etc.)
+📊 Structured CSV file generation (scraped_books.csv)
+📱 Telegram instant notification after completion
+📎 Automatic file sending to Telegram chat
+🔐 Secure credential handling using .env
+⚠️ Basic error handling for scraping and API failures
+🧩 Clean and modular Python script structure
+📁 Project Structure
+book-scraper-bot/
+│
+├── book_scraper.py
+├── .env
+├── requirements.txt
+├── scraped_books.csv   (generated after run)
+└── README.md
+🛠️ Installation Guide
+1️⃣ Clone the Repository
+git clone https://github.com/deva-automation/book-scraper-bot.git
+cd book-scraper-bot
+2️⃣ Create Virtual Environment (Recommended)
+python -m venv venv
+venv\Scripts\activate   # Windows
+3️⃣ Install Dependencies
+pip install selenium pandas requests python-dotenv webdriver-manager
 
-## 🛠️ Installation & Setup
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/deva-automation/book-scraper-bot.git](https://github.com/deva-automation/book-scraper-bot.git)
-   cd book-scraper-bot
-Install required libraries:
+OR (if you use requirements file):
 
-Bash
-pip install selenium pandas webdriver-manager requests python-dotenv
-Configure Secrets:
-Create a .env file in the project folder and add your Telegram details:
+pip install -r requirements.txt
+4️⃣ Create .env File
 
-Plaintext
-BOT_TOKEN=your_bot_token_here
-CHAT_ID=your_chat_id_here
-▶️ How to Run
-Simply execute the script:
+Create a file named .env in the root folder:
 
-Bash
+BOT_TOKEN=your_telegram_bot_token_here
+CHAT_ID=your_telegram_chat_id_here
+🔐 How to get these:
+BOT_TOKEN → From Telegram @BotFather
+CHAT_ID → From @userinfobot
+▶️ How to Run the Project
 python book_scraper.py
-📂 Output
-scraped_books.csv: Local file containing scraped data.
+📂 Output Explanation
 
-Telegram Alert: Instant message and file delivery on your mobile/desktop.
+After running the script:
 
+📄 CSV File
+scraped_books.csv
+
+Contains all scraped book data in structured format.
+
+📱 Telegram Output
+Success message sent to your Telegram
+CSV file automatically delivered to your chat
+🧠 How It Works (Logic Flow)
+Selenium opens the target website
+Scrapes book data (title, price, availability)
+Stores data using Pandas DataFrame
+Saves data into CSV file
+Sends file + message via Telegram Bot API
+📌 Important Notes
+Make sure Chrome browser is installed
+Keep ChromeDriver compatible (handled automatically by webdriver-manager)
+Do NOT share your .env file publicly
 👨‍💻 Author
-Deva (Aspiring Python Automation Developer)
+
+Deva
+Python Automation Developer (Learning & Building Real-world Projects)
